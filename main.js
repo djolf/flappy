@@ -22,16 +22,16 @@ var mainState = {
 
         var spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         spaceKey.onDown.add(this.jump, this);
+        game.input.onTap.add(this.jump, this);
 
         game.input.mouse.capture = true;
         game.input.activePointer.leftButton.onDown.add(this.jump,this);
-
 
         this.pipes = game.add.group();
 
         this.timer = game.time.events.loop(1500, this.addRowOfPipes, this);
 
-        this.labelScore = game.add.text(380, 0, "v0.2", { font: "10px Arial", fill: "#ffffff" });
+        this.labelScore = game.add.text(380, 0, "v0.3", { font: "10px Arial", fill: "#ffffff" });
 
         this.score = 0;
         this.labelScore = game.add.text(20, 20, "0", { font: "30px Arial", fill: "#ffffff" });
